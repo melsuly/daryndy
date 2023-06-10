@@ -15,10 +15,31 @@ const ElementsTheme = ({ children }) => {
                     fontFamily: 'Regular',
                 },
             },
+            ButtonGroup: {
+                textStyle: {
+                    fontFamily: 'Regular',
+                }
+            },
             Text: {
                 style: {
                     fontFamily: 'Regular',
                     fontSize: 16,
+                },
+            },
+            Input: {
+                style: {
+                    fontFamily: 'Regular',
+                    color: '#1F1F21',
+                },
+                containerStyle: {
+                    paddingHorizontal: 16,
+                },
+                labelStyle: {
+                    fontFamily: 'Medium',
+                },
+                leftIconContainerStyle: {
+                    marginLeft: 10,
+                    marginRight: 10,
                 },
             },
         },
