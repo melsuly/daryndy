@@ -1,10 +1,13 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { View } from 'react-native'
+import { Text, Button } from '@rneui/themed'
 
 const RegisterScreen = () => {
     return (
         <View>
-            <Text>RegisterScreen</Text>
+            <Text>Hello, World!</Text>
+
+            <Button color="error" title="Hello, World!" />
         </View>
     )
 }
