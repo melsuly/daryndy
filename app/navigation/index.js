@@ -3,7 +3,7 @@ import AuthStack from './AuthStack'
 import UserStack from './UserStack'
 
 const Navigation = () => {
-    const isAuthorized = true
+    const isAuthorized = false
 
     return (
         <NavigationContainer>
