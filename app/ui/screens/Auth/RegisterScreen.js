@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { View, StyleSheet, ActivityIndicator } from 'react-native'
 import {
     Text,
@@ -10,9 +10,11 @@ import {
     Overlay,
 } from '@rneui/themed'
 import axios from '../../../axios'
+import { AuthContext } from '../../../providers/AuthProvider'
 
 const RegisterScreen = () => {
     const [isLoading, setIsLoading] = useState(false)
+    const { authorize } = useContext(AuthContext)
 
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
@@ -64,7 +66,7 @@ const RegisterScreen = () => {
         axios
             .post('/auth/register', data)
             .then((res) => {
-                // ToDo: Authorize user
+                authorize(res.data)
             })
             .catch((err) => {
                 setError('Бұл Email базада тіркелген!')

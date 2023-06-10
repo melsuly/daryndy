@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { View, StyleSheet, ActivityIndicator, Pressable } from 'react-native'
 import {
@@ -11,9 +11,11 @@ import {
     Overlay,
 } from '@rneui/themed'
 import axios from '../../../axios'
+import { AuthContext } from '../../../providers/AuthProvider'
 
 const LoginScreen = ({ navigation }) => {
     const [isLoading, setIsLoading] = useState(false)
+    const { authorize } = useContext(AuthContext)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -52,8 +54,7 @@ const LoginScreen = ({ navigation }) => {
         axios
             .post('/auth/login', data)
             .then((res) => {
-                // ToDo: Authorize user
-                console.log(res.data)
+                authorize(res.data)
             })
             .catch((err) => {
                 setError('Email немесе құпиясөз қате!')

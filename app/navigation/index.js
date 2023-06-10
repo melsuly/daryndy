@@ -1,9 +1,12 @@
+import { useContext } from 'react'
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native'
 import AuthStack from './AuthStack'
 import UserStack from './UserStack'
+import { AuthContext } from '../providers/AuthProvider'
+import LoadingScreen from '@screens/LoadingScreen'
 
 const Navigation = () => {
-    const isAuthorized = false
+    const { isLoading, token } = useContext(AuthContext)
 
     const CustomTheme = {
         ...DefaultTheme,
@@ -13,9 +16,11 @@ const Navigation = () => {
         },
     }
 
+    if (isLoading) return <LoadingScreen />
+
     return (
         <NavigationContainer theme={CustomTheme}>
-            {isAuthorized ? <UserStack /> : <AuthStack />}
+            {token != null ? <UserStack /> : <AuthStack />}
         </NavigationContainer>
     )
 }
