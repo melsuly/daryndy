@@ -6,7 +6,11 @@ const UserStack = () => {
 
     return (
         <Stack.Navigator>
-            <Stack.Screen name="MainTabs" component={MainTabs} />
+            <Stack.Screen
+                name="MainTabs"
+                component={MainTabs}
+                options={{ headerShown: false }}
+            />
         </Stack.Navigator>
     )
 }
