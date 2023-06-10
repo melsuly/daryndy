@@ -97,12 +97,6 @@ const RegisterScreen = () => {
                     />
                 </View>
 
-                {error != null && (
-                    <View style={{ paddingHorizontal: 16 }}>
-                        <Text style={{ color: '#FF3B30' }}>{error}</Text>
-                    </View>
-                )}
-
                 <View>
                     <Input
                         label="Есім"
@@ -175,6 +169,12 @@ const RegisterScreen = () => {
                             />
                         }
                     />
+
+                    {error != null && (
+                        <View style={{ paddingHorizontal: 16 }}>
+                            <Text style={{ color: '#FF3B30' }}>{error}</Text>
+                        </View>
+                    )}
                 </View>
 
                 <View style={{ paddingHorizontal: 16 }}>

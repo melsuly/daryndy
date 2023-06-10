@@ -57,6 +57,7 @@ const LoginScreen = ({ navigation }) => {
             })
             .catch((err) => {
                 setError('Email немесе құпиясөз қате!')
+                setIsValidated(false)
             })
             .finally(() => {
                 setIsLoading(false)
@@ -86,12 +87,6 @@ const LoginScreen = ({ navigation }) => {
                             borderRadius={8}
                         />
                     </View>
-
-                    {error != null && (
-                        <View style={{ paddingHorizontal: 16 }}>
-                            <Text style={{ color: '#FF3B30' }}>{error}</Text>
-                        </View>
-                    )}
 
                     <View>
                         <Input
@@ -124,6 +119,19 @@ const LoginScreen = ({ navigation }) => {
                                 />
                             }
                         />
+
+                        {error != null && (
+                            <View
+                                style={{
+                                    paddingHorizontal: 16,
+                                    marginTop: 24,
+                                }}
+                            >
+                                <Text style={{ color: '#FF3B30' }}>
+                                    {error}
+                                </Text>
+                            </View>
+                        )}
                     </View>
 
                     <View style={{ paddingHorizontal: 16 }}>
