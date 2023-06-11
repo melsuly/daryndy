@@ -1,10 +1,13 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { View, Text } from 'react-native'
+import MessangerItem from '../../components/Messanger/MessangerItem'
 
 const MessangerScreen = () => {
     return (
         <View>
-            <Text>MessangerScreen</Text>
+            <MessangerItem />
+            <MessangerItem />
+            <MessangerItem />
         </View>
     )
 }

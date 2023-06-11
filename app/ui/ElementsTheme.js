@@ -18,7 +18,7 @@ const ElementsTheme = ({ children }) => {
             ButtonGroup: {
                 textStyle: {
                     fontFamily: 'Regular',
-                }
+                },
             },
             Text: {
                 style: {
@@ -40,6 +40,16 @@ const ElementsTheme = ({ children }) => {
                 leftIconContainerStyle: {
                     marginLeft: 10,
                     marginRight: 10,
+                },
+            },
+            ListItemTitle: {
+                style: {
+                    fontFamily: 'Medium',
+                },
+            },
+            ListItemSubtitle: {
+                style: {
+                    fontFamily: 'Regular',
                 },
             },
         },

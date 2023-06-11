@@ -45,7 +45,11 @@ const MainTabs = () => {
             }}
         >
             <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Messanger" component={MessangerScreen} />
+            <Tab.Screen
+                name="Messanger"
+                component={MessangerScreen}
+                options={{ title: 'Мессенджер' }}
+            />
             <Tab.Screen name="Profile" component={ProfileScreen} />
         </Tab.Navigator>
     )
