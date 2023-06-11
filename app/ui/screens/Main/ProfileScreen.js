@@ -3,7 +3,7 @@ import { AuthContext } from '../../../providers/AuthProvider'
 import { TouchableOpacity, View } from 'react-native'
 import { Avatar, Text, ListItem, Icon, Dialog } from '@rneui/themed'
 
-const ProfileScreen = () => {
+const ProfileScreen = ({ navigation }) => {
     const [signoutModalVisible, setSignoutModalVisible] = useState(false)
 
     const { user, logout } = useContext(AuthContext)
@@ -46,7 +46,9 @@ const ProfileScreen = () => {
 
             <View>
                 {user.role == 'admin' && (
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('Admin')}
+                    >
                         <ListItem>
                             <Icon name="cpu" type="octicon" color="black" />
                             <ListItem.Content>

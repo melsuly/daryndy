@@ -44,7 +44,13 @@ const MainTabs = () => {
                 }
             }}
         >
-            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen
+                name="Home"
+                component={HomeScreen}
+                options={{
+                    title: 'Басты бет',
+                }}
+            />
             <Tab.Screen
                 name="Messanger"
                 component={MessangerScreen}
