@@ -2,7 +2,7 @@
   "expo": {
     "name": "Daryndy",
     "slug": "daryndy",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#008454"
-      }
+      },
+      "package": "com.melsuly.daryndy"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "65eeaa3e-1e0a-439a-a1d5-14ff8f383a6c"
+      }
     }
   }
 }

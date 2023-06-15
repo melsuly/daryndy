@@ -9,6 +9,11 @@ import CreateTaskScreen from '@screens/Admin/CreateTaskScreen'
 import ManageCourseScreen from '@screens/Admin/CourseScreen'
 import ManageModuleScreen from '@screens/Admin/ModuleScreen'
 import ManageLessonScreen from '@screens/Admin/LessonScreen'
+import LessonResultScreen from '../ui/screens/Course/LessonResultScreen'
+
+import CourseScreen from '@screens/Course/CourseScreen'
+import LessonScreen from '@screens/Course/LessonScreen'
+import LessonStats from '@screens/Course/LessonStats'
 
 const UserStack = () => {
     const Stack = createNativeStackNavigator()
@@ -22,8 +27,31 @@ const UserStack = () => {
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen name="Chat" component={ChatScreen} />
+
+                <Stack.Screen
+                    name="Course"
+                    component={CourseScreen}
+                    options={{ title: '' }}
+                />
+                <Stack.Screen
+                    name="Lesson"
+                    component={LessonScreen}
+                    options={{ title: '' }}
+                />
+
+                <Stack.Screen
+                    name="LessonStats"
+                    component={LessonStats}
+                    options={{ title: '' }}
+                />
             </Stack.Group>
             <Stack.Group>
+                <Stack.Screen
+                    name="LessonResult"
+                    component={LessonResultScreen}
+                    options={{ title: 'Сабақ нәтижесі' }}
+                />
+
                 <Stack.Screen
                     name="Admin"
                     component={AdminScreen}

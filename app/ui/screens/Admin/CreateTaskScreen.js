@@ -21,13 +21,15 @@ const CreateTaskScreen = ({ navigation, route }) => {
     const { loadLesson, lessonID } = route.params
 
     useEffect(() => {
+        console.log(content)
+
         setIsValidated(true)
-    }, [])
+    }, [content])
 
     const createPressed = () => {
         const data = {
             category: types[selectedType],
-            content,
+            content: JSON.parse(content),
         }
 
         axios
